@@ -20,3 +20,17 @@ This project implements a **3-tier blog API system** consisting of:
 * **Database (MySQL 5.7):** Persistent storage using StatefulSet.
 * **Reverse Proxy (Nginx):** Exposes the API over HTTPS with SSL/TLS termination.
 
+---
+
+## 🏗 Architecture
+
+```mermaid
+graph TD
+    Client[Client Browser] -->|HTTPS :30443| NodePort
+    subgraph Kubernetes Cluster
+        NodePort[Nginx Service NodePort] -->|Route| NginxPod
+        NginxPod[Nginx Proxy Pod] -->|HTTP :8000| BackendSvc[Backend Service]
+        BackendSvc -->|Internal| BackendPod[Go Backend Pod]
+        BackendPod -->|TCP :3306| DBSvc[DB Headless Service]
+        DBSvc -->|Persist| DBPod[MySQL StatefulSet]
+    end
