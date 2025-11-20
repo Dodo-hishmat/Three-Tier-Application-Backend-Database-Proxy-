@@ -34,3 +34,54 @@ graph TD
         BackendPod -->|TCP :3306| DBSvc[DB Headless Service]
         DBSvc -->|Persist| DBPod[MySQL StatefulSet]
     end
+Key Architectural Decisions
+StatefulSet for Database: Used instead of Deployment to ensure stable network identity and persistent storage for MySQL.
+
+Headless Service: Created for the database to allow direct Pod-to-Pod communication.
+
+Multi-stage Dockerfile: Optimized Go binary size by separating build and runtime stages (Alpine Linux).
+
+Security:
+
+Disabled automountServiceAccountToken to prevent read-only filesystem errors.
+
+Used Kubernetes Secrets for database credentials.
+
+Component,Technology,Version
+Backend,Go (Golang),1.18
+Database,MySQL,5.7
+Proxy,Nginx,Latest
+Orchestration,Kubernetes (Minikube),Latest
+Containerization,Docker,20.10+
+
+project/
+├── backend/
+│   ├── Dockerfile              # Multi-stage build for Go app
+│   ├── main.go                 # Backend API logic
+│   └── go.mod                  # Dependencies
+│
+├── nginx/
+│   ├── Dockerfile              # Nginx container with SSL certs
+│   ├── nginx.conf              # Proxy configuration
+│   └── generate-ssl.sh         # Script for self-signed certs
+│
+├── K8S/
+│   ├── backend_deployment.yaml     # Backend Deployment
+│   ├── backend_service.yaml        # ClusterIP Service
+│   ├── db_statefulset.yaml         # MySQL StatefulSet
+│   ├── db_headless_service.yaml    # Headless Service
+│   ├── db-data-pv.yaml             # Persistent Volume
+│   ├── db-data-pvc.yaml            # Persistent Volume Claim
+│   ├── db-secret.yaml              # Secrets (Encoded)
+│   ├── proxy_deployment.yaml       # Nginx Deployment
+│   ├── proxy_nodeport.yml          # NodePort Service (30443)
+│   └── nginx-certs.yaml            # TLS Secrets
+│
+└── README.md
+
+✅ Prerequisites
+Docker Engine installed.
+
+Minikube installed and running.
+
+kubectl CLI tool.
