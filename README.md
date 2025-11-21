@@ -44,3 +44,31 @@ graph TD
 | **Proxy** | Nginx | Latest |
 | **Orchestration** | Kubernetes (Minikube) | Latest |
 | **Containerization** | Docker | 20.10+ |
+
+---
+
+## 📂 Project Structure
+project/
+├── backend/
+│   ├── Dockerfile              # Multi-stage build for Go app
+│   ├── main.go                 # Backend API logic
+│   └── go.mod                  # Dependencies
+│
+├── nginx/
+│   ├── Dockerfile              # Nginx container with SSL certs
+│   ├── nginx.conf              # Proxy configuration
+│   └── generate-ssl.sh         # Script for self-signed certs
+│
+├── K8S/
+│   ├── backend_deployment.yaml     # Backend Deployment
+│   ├── backend_service.yaml        # ClusterIP Service
+│   ├── db_statefulset.yaml         # MySQL StatefulSet
+│   ├── db_headless_service.yaml    # Headless Service
+│   ├── db-data-pv.yaml             # Persistent Volume
+│   ├── db-data-pvc.yaml            # Persistent Volume Claim
+│   ├── db-secret.yaml              # Secrets (Encoded)
+│   ├── proxy_deployment.yaml       # Nginx Deployment
+│   ├── proxy_nodeport.yml          # NodePort Service (30443)
+│   └── nginx-certs.yaml            # TLS Secrets
+│
+└── README.md
