@@ -34,3 +34,6 @@ graph TD
         BackendPod -->|TCP :3306| DBSvc[DB Headless Service]
         DBSvc -->|Persist| DBPod[MySQL StatefulSet]
     end
+```
+## 🛠️ Technologies Used
+
