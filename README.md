@@ -84,7 +84,7 @@ Step 1: Clone and Prepare
 ```bash
 git clone <your-repo-url>
 cd project
-
+```
 Step 2: Build Docker Images in Minikube
 We use the Minikube Docker daemon to build images locally so Kubernetes can find them.
 ```bash
@@ -92,7 +92,7 @@ eval $(minikube docker-env)
 docker build -t my-go-backend:v1 ./backend
 # (Nginx image is built similarly or pulled)
 docker build -t my-custom-nginx:v1
-
+```
 Step 3: Apply Kubernetes Manifests
 We deploy the infrastructure in specific order (Storage -> DB -> Backend -> Proxy).
 ```bash
@@ -117,7 +117,8 @@ Step 4: Verify Deployment
 Check if all pods are running:
 ```bash
 kubectl get all
-```Running Status: 
+```
+Running Status: 
 <img width="890" height="503" alt="image" src="https://github.com/user-attachments/assets/8e22a660-4db0-4e9b-bae8-523bd1127612" />
 ---
 
