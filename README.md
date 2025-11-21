@@ -37,10 +37,10 @@ graph TD
 ```
 ---
 ## 🛠️ Technologies Used
-Component,Technology,Version
-Backend,Go (Golang),1.18
-Database,MySQL,5.7
-Proxy,Nginx,Latest
-Orchestration,Kubernetes (Minikube),Latest
-Containerization,Docker,20.10+
-
+| Component | Technology | Version |
+|-----------|------------|---------|
+| **Backend** | Go (Golang) | 1.18 |
+| **Database** | MySQL | 5.7 |
+| **Proxy** | Nginx | Latest |
+| **Orchestration** | Kubernetes (Minikube) | Latest |
+| **Containerization** | Docker | 20.10+ |
