@@ -34,3 +34,11 @@ graph TD
         BackendPod -->|TCP :3306| DBSvc[DB Headless Service]
         DBSvc -->|Persist| DBPod[MySQL StatefulSet]
     end
+
+
+Component,Technology,Version
+Backend,Go (Golang),1.18
+Database,MySQL,5.7
+Proxy,Nginx,Latest
+Orchestration,Kubernetes (Minikube),Latest
+Containerization,Docker,20.10+
