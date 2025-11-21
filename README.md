@@ -74,3 +74,8 @@ graph TD
 └── README.md
 ```
 ---
+## ✅ Prerequisites
+- Docker Engine installed.
+- Minikube installed and running.
+- kubectl CLI tool.
+---
