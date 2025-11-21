@@ -32,7 +32,7 @@ graph TD
         NginxPod[Nginx Proxy Pod] -->|HTTP :8000| BackendSvc[Backend Service]
         BackendSvc -->|Internal| BackendPod[Go Backend Pod]
         BackendPod -->|TCP :3306| DBSvc[DB Headless Service]
-        DBSvc -->|Persist| DBPod[MySQL StatefulSet]
+        DBSvc -->|Persist| DBPod[MySQL StatefulSet]```
     end
 
 
