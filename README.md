@@ -48,7 +48,7 @@ graph TD
 ---
 
 ## 📂 Project Structure
-project/
+```project/
 ├── backend/
 │   ├── Dockerfile              # Multi-stage build for Go app
 │   ├── main.go                 # Backend API logic
@@ -72,3 +72,5 @@ project/
 │   └── nginx-certs.yaml            # TLS Secrets
 │
 └── README.md
+```
+---
