@@ -119,6 +119,7 @@ Check if all pods are running:
 kubectl get all
 ```
 Running Status: 
-<img width="890" height="503" alt="image" src="https://github.com/user-attachments/assets/8e22a660-4db0-4e9b-bae8-523bd1127612" />
+
+<img width="918" height="566" alt="image" src="https://github.com/user-attachments/assets/2bb57b11-3759-4d0d-8b1e-2e9c212561a7" />
 ---
 
