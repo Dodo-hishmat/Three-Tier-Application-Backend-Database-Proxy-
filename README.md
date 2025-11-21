@@ -120,6 +120,6 @@ kubectl get all
 ```
 Running Status: 
 
-<img width="918" height="566" alt="image" src="https://github.com/user-attachments/assets/2bb57b11-3759-4d0d-8b1e-2e9c212561a7" />
+
 ---
 
