@@ -117,7 +117,7 @@ Step 4: Verify Deployment
 Check if all pods are running:
 ```bash
 kubectl get all
-Running Status: 
+```Running Status: 
 <img width="890" height="503" alt="image" src="https://github.com/user-attachments/assets/8e22a660-4db0-4e9b-bae8-523bd1127612" />
 ---
 
