@@ -146,21 +146,21 @@ Direct Access Result:
 ## 🔧 Challenges & Troubleshooting
 During the development, I encountered and solved several critical issues:
 
---ErrImageNeverPull:
+- ErrImageNeverPull:
 
-Issue: Kubernetes couldn't find the local Docker images.
+⚠️ Issue: Kubernetes couldn't find the local Docker images.
 
-Fix: Used eval $(minikube docker-env) to build images inside Minikube's context and set imagePullPolicy: Never.
+✅ Fix: Used eval $(minikube docker-env) to build images inside Minikube's context and set imagePullPolicy: Never.
 
 - Read-only file system (CrashLoopBackOff):
 
-Issue: The backend container failed to start because Kubernetes tried to mount the ServiceAccount token into a read-only secret volume.
+⚠️ Issue: The backend container failed to start because Kubernetes tried to mount the ServiceAccount token into a read-only secret volume.
 
 ✅ Fix: Added automountServiceAccountToken: false to the Backend Deployment manifest.
 
 - Port Forwarding Connection Refused:
 
-Issue: Port forwarding was bound to 127.0.0.1 inside the VM, making it inaccessible from Windows.
+⚠️ Issue: Port forwarding was bound to 127.0.0.1 inside the VM, making it inaccessible from Windows.
 
 ✅ Fix: Used --address 0.0.0.0 to allow external access to the tunnel.
 
