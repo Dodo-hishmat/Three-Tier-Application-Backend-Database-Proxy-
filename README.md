@@ -120,6 +120,7 @@ kubectl get all
 ```
 Running Status: 
 
+![WhatsApp Image 2025-11-21 at 02 59 01_7b0685ff](https://github.com/user-attachments/assets/1a3544db-cea1-4270-9769-3c0e12bbeb67)
 
 ---
 
